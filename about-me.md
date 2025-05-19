@@ -4,7 +4,9 @@ title: 關於我
 
 # {{ $frontmatter.title }}
 
-## 我是 CHI
+## 我是誰
+
+Chi
 
 ## 曾經玩過遊戲
 
