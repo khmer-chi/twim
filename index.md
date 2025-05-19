@@ -3,23 +3,31 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: 台灣即時通
+  text: TW IM
+  tagline: 隨便寫寫
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 什麼是台灣即時通
+      link: /what-is-twim
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 關於我
+      link: /about-me
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 廣告位 A
+    details: 期待有緣人
+  - title: 廣告位 B
+    details: 期待有緣人
+  - title: 廣告位 C
+    details: 期待有緣人
 ---
 
+## Getting Started
+
+You can get started using VitePress right away using `npx`!
+
+```sh
+npm init
+npx vitepress init
+```
