@@ -2,7 +2,7 @@
 title: 關於我
 ---
 
-# 關於我
+# {{ $frontmatter.title }}
 
 ## 我是誰
 
