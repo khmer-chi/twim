@@ -2,7 +2,7 @@
 title: 為什麼是台灣即時通
 ---
 
-# 為什麼是台灣即時通
+# {{ $frontmatter.title }}
 
 IM 代表即時通訊，搜尋到 taiwan 剛好沒有人註冊就買了
 
@@ -20,4 +20,4 @@ IM 代表即時通訊，搜尋到 taiwan 剛好沒有人註冊就買了
 
 ## 構成
 
-vitepress、vue、javascript
+vitepress、vue
