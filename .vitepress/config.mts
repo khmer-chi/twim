@@ -38,9 +38,9 @@ export default defineConfig({
         timeStyle: 'medium'
       }
     },
-    search: {
-      provider: 'local'
-    }
+    // search: {
+    //   provider: 'local'
+    // }
   },
   lastUpdated: true,
 
