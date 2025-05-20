@@ -31,17 +31,8 @@ export default defineConfig({
       copyright: 'Copyright © 2025-present Chi'
     },
 
-    lastUpdated: {
-      text: 'Updated at',
-      formatOptions: {
-        dateStyle: 'full',
-        timeStyle: 'medium'
-      }
-    },
     // search: {
     //   provider: 'local'
     // }
   },
-  lastUpdated: true,
-
 })
