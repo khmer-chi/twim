@@ -11,17 +11,25 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       // { text: 'Examples', link: '/markdown-examples' }
     ],
-    sidebar: [
-      {
-        text: '文章列表',
-        items: [
-          { text: '為什麼是台灣即時通', link: '/what-is-twim' },
-          { text: '關於我', link: '/about-me' },
-          // { text: '團隊', link: '/team' },
-          // { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/article': [
+        {
+          text: '文章列表',
+          items: [
+            { text: '為什麼是台灣即時通', link: '/article/what-is-twim' },
+            { text: '關於我', link: '/article/about-me' },
+          ]
+        }
+      ],
+      '/bug': [
+        {
+          text: 'bug',
+          items: [
+            { text: 'vitepress 在手機 Arc browser 報錯 503', link: '/bug/cloudflare-speed-optimization' },
+          ]
+        }
+      ],
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/khmer-chi' }

@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 什麼是台灣即時通
-      link: /what-is-twim
+      link: /article/what-is-twim
     - theme: alt
       text: 關於我
-      link: /about-me
+      link: /article/about-me
 
 features:
   - title: 廣告位 A
