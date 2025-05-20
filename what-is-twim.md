@@ -20,4 +20,4 @@ IM 代表即時通訊，搜尋到 taiwan 剛好沒有人註冊就買了
 
 ## 構成
 
-vitepress、vue
+vitepress、vue、javascript
