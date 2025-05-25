@@ -43,4 +43,7 @@ export default defineConfig({
     //   provider: 'local'
     // }
   },
+  sitemap: {
+    hostname: 'https://taiwan.im'
+  },
 })
