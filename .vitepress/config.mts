@@ -43,7 +43,18 @@ export default defineConfig({
     //   provider: 'local'
     // }
   },
+  head: [
+    [
+      'script',
+      {
+        async: '',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159719568845688',
+        crossorigin: 'anonymous'
+      }
+    ]
+  ],
   sitemap: {
     hostname: 'https://taiwan.im'
   },
+
 })
