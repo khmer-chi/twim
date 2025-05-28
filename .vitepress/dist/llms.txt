@@ -10,12 +10,10 @@
 
 - [為什麼是台灣即時通](/article/what-is-twim.md)
 - [關於我](/article/about-me.md)
+- [{{ $frontmatter.title }}](/article/redius-alternative.md)
+- [vim小提示](/article/vim-tip.md)
 
 ### bug
 
 - [vitepress 在手機 Arc browser 報錯 503](/bug/cloudflare-speed-optimization.md)
 
-### Other
-
-- [{{ $frontmatter.title }}](/article/redius-alternative.md)
-- [vim小提示](/article/vim-tip.md)
