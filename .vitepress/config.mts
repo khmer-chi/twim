@@ -18,6 +18,8 @@ export default defineConfig({
           items: [
             { text: '為什麼是台灣即時通', link: '/article/what-is-twim' },
             { text: '關於我', link: '/article/about-me' },
+            { text: 'redius替代品出現了', link: '/article/redius-alternative' },
+            { text: 'vim小提示', link: '/article/vim-tip.md' },
           ]
         }
       ],
