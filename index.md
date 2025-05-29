@@ -23,11 +23,10 @@ features:
     details: 期待有緣人
 ---
 
-## Getting Started
+## 至少一週兩更
 
-You can get started using VitePress right away using `npx`!
+yes yes yes
 
-```sh
-npm init
-npx vitepress init
+```js
+console.log("yesyes");
 ```
