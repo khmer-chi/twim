@@ -8,10 +8,11 @@
 
 ### 文章列表
 
-- [為什麼是台灣即時通](/article/what-is-twim.md)
-- [關於我](/article/about-me.md)
-- [{{ $frontmatter.title }}](/article/redius-alternative.md)
+- [陣列（array）如何變成聯合類型(union type)](/article/typescript-array-to-unionType.md)
 - [vim小提示](/article/vim-tip.md)
+- [{{ $frontmatter.title }}](/article/redius-alternative.md)
+- [關於我](/article/about-me.md)
+- [為什麼是台灣即時通](/article/what-is-twim.md)
 
 ### bug
 
