@@ -16,7 +16,7 @@ export default defineConfig({
         {
           text: '文章列表',
           items: [
-            { text: 'vim小提示', link: '/article/typescript-array-to-unionType' },
+            { text: '陣列（array）如何變成聯合類型(union type)', link: '/article/typescript-array-to-unionType' },
             { text: 'vim小提示', link: '/article/vim-tip.md' },
             { text: 'redius替代品出現了', link: '/article/redius-alternative' },
             { text: '關於我', link: '/article/about-me' },
