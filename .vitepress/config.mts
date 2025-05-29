@@ -16,10 +16,11 @@ export default defineConfig({
         {
           text: '文章列表',
           items: [
-            { text: '為什麼是台灣即時通', link: '/article/what-is-twim' },
-            { text: '關於我', link: '/article/about-me' },
-            { text: 'redius替代品出現了', link: '/article/redius-alternative' },
+            { text: 'vim小提示', link: '/article/typescript-array-to-unionType' },
             { text: 'vim小提示', link: '/article/vim-tip.md' },
+            { text: 'redius替代品出現了', link: '/article/redius-alternative' },
+            { text: '關於我', link: '/article/about-me' },
+            { text: '為什麼是台灣即時通', link: '/article/what-is-twim' },
           ]
         }
       ],
