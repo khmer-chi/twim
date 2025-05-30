@@ -19,8 +19,8 @@ export default defineConfig({
             { text: '陣列（array）如何變成聯合類型(union type)', link: '/article/typescript-array-to-unionType' },
             { text: 'vim小提示', link: '/article/vim-tip.md' },
             { text: 'redius替代品出現了', link: '/article/redius-alternative' },
-            { text: '關於我', link: '/article/about-me' },
             { text: '為什麼是台灣即時通', link: '/article/what-is-twim' },
+            { text: '關於我', link: '/article/about-me' },
           ]
         }
       ],
@@ -29,6 +29,7 @@ export default defineConfig({
           text: 'bug',
           items: [
             { text: 'vitepress 在手機 Arc browser 報錯 503', link: '/bug/cloudflare-speed-optimization' },
+            { text: '影響半天的 @types/node bug', link: '/bug/typescript_parentDir_node_modules_effect.md' },
           ]
         }
       ],

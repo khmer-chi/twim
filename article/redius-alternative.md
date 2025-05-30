@@ -1,5 +1,5 @@
 ---
-redius替代品出現了
+title: redius替代品出現了
 ---
 
 # {{ $frontmatter.title }}
