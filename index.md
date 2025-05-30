@@ -28,5 +28,5 @@ features:
 yes yes yes
 
 ```js
-console.log("yesyes");
+console.log('yesyes');
 ```
