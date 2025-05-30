@@ -15,6 +15,16 @@ https://www.youtube.com/watch?v=1qVEpWGfSCs
 ---
 
 ---
+url: /404.md
+---
+
+# 404 - Page Not Found
+
+Sorry, the page you are looking for does not exist.
+
+---
+
+---
 url: /article/vim-tip.md
 ---
 

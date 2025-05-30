@@ -18,3 +18,6 @@
 
 - [vitepress 在手機 Arc browser 報錯 503](/bug/cloudflare-speed-optimization.md)
 
+### Other
+
+- [404 - Page Not Found](/404.md)
