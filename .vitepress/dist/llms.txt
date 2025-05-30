@@ -21,3 +21,4 @@
 ### Other
 
 - [404 - Page Not Found](/404.md)
+- [影響半天的 @types/node bug](/bug/typescript_parentDir_node_modules_effect.md)
