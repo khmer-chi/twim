@@ -62,4 +62,7 @@ export default defineConfig({
   vite: {
     plugins: [llmstxt()]
   },
+  // async transformHead(context) {
+  //   console.log(context)
+  // },
 })

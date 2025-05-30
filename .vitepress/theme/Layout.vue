@@ -1,17 +1,13 @@
 <script setup>
-import { useData, useRoute } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-
 const { Layout } = DefaultTheme;
-// const { frontmatter } = useData();
-// const route = useRoute();
 </script>
 
 <template>
   <Layout>
-    <!-- <template #not-found>
-      {{ route }}
-      {{ frontmatter }}
-    </template> -->
+    <!-- <template #not-found> -->
+    <!-- <meta name="robots" content="noindex" />
+      <div>Sorry, the page you are looking for does not exist.</div> -->
+    <!-- </template> -->
   </Layout>
 </template>
