@@ -11,3 +11,9 @@ title: redius替代品出現了
 ## 參考資料
 
 https://www.youtube.com/watch?v=1qVEpWGfSCs
+
+## 補充
+
+好像不是我想的那樣 AWS 才是邪惡的一方
+
+https://youtu.be/UG2stsr8Q3c?si=GRHLosbXcO7J19QF
