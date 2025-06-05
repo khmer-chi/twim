@@ -1,5 +1,6 @@
 ---
 title: 陣列（array）如何變成聯合類型(union type)
+createtime: 202505291924
 ---
 
 # {{ $frontmatter.title }}

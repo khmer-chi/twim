@@ -13,20 +13,17 @@ hero:
     - theme: alt
       text: 關於我
       link: /article/about-me
-
-features:
-  - title: 廣告位 A
-    details: 期待有緣人
-  - title: 廣告位 B
-    details: 期待有緣人
-  - title: 廣告位 C
-    details: 期待有緣人
+# features:
+#   - title: 廣告位 A
+#     details: 期待有緣人
+#   - title: 廣告位 B
+#     details: 期待有緣人
+#   - title: 廣告位 C
+#     details: 期待有緣人
 ---
 
-## 至少一週兩更
-
-yes yes yes
+## 目標
 
 ```js
-console.log('yesyes');
+console.log('至少一週兩更');
 ```

@@ -1,5 +1,6 @@
 ---
 title: vim小提示
+createtime: 202505221528
 ---
 
 # {{ $frontmatter.title }}

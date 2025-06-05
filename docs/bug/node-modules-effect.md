@@ -1,5 +1,6 @@
 ---
 title: 影響半天的 @types/node bug
+createtime: 202505301514
 ---
 
 # {{ $frontmatter.title }}
