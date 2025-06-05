@@ -3,8 +3,6 @@ title: 影響半天的 @types/node bug
 createtime: 202505301514
 ---
 
-# {{ $frontmatter.title }}
-
 是這樣的今天同事遇到一個奇怪的 bug 我們都是使用 macbook
 
 是關於 typescript 的編譯時報錯

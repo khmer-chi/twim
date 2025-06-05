@@ -1,15 +1,16 @@
 {
-  "devDependencies": {
-    "@types/node": "^22.15.29",
-    "front-matter": "^4.0.2",
-    "glob": "^11.0.2",
-    "vitepress": "2.0.0-alpha.5",
-    "vitepress-plugin-llms": "^1.3.4"
-  },
+  "private": true,
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "glob": "^11.0.2",
+    "gray-matter": "^4.0.3",
+    "vitepress": "2.0.0-alpha.5",
+    "vitepress-plugin-llms": "^1.3.4"
   },
   "dependencies": {
     "markdown-it-mathjax3": "^4.3.2"

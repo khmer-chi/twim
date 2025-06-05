@@ -1,5 +1,5 @@
 import { glob } from "glob"
-import fm from 'front-matter'
+import matter from 'gray-matter';
 import { readFile } from "node:fs/promises"
 const textMap = new Map([
   ['article', '文章列表'],
@@ -11,10 +11,10 @@ export const generateSidebar = async () => {
   const orderMap = new Map<string, number>()
   for (const path of list) {
     const content = (await readFile(path)).toString()
-    const { attributes: { title, createtime } } = fm<{ title: string, createtime: number }>(content)
+    const { data: { title, createtime } } = matter(content)
     const pathArray = path.split('/')
     pathArray.shift()
-    const fileName = pathArray.pop() ?? ''//?.replace('.md', '') 
+    const fileName = (pathArray.pop() ?? '').replace('.md', '')
     const groupName = pathArray.join('/')
     if (!map.has(groupName)) map.set(groupName, [])
     const list = map.get(groupName) ?? []

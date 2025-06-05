@@ -3,8 +3,6 @@ title: vim小提示
 createtime: 202505221528
 ---
 
-# {{ $frontmatter.title }}
-
 想要學習 vim 很久了，但是偷懶了許久
 
 vim 我覺得最麻煩的就是配置和安裝了，每次安裝都會卡住
