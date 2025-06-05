@@ -42,6 +42,6 @@ export const generateSidebar = async () => {
     }
     result.push(object)
   }
-  console.log(JSON.stringify(result, null, 4))
+  // console.log(JSON.stringify(result, null, 4))
   return result
 }
