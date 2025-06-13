@@ -1,34 +1,71 @@
-name: Deploy and Notify via Telegram
+name: Deploy to Cloudflare Pages and Notify via Telegram
+
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Wait for Cloudflare Pages Deployment
-        id: cf-pages
-        uses: WalshyDev/cf-pages-await@v1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          project: ${{ secrets.CF_PROJECT_NAME }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Trigger Cloudflare Pages Deploy Hook
+        run: |
+          curl -X POST ${{ secrets.CF_DEPLOY_HOOK_URL }}
+
+      - name: Wait and Poll for Deployment Status
+        id: check_status
+        run: |
+          echo "Checking deployment status..."
+
+          ACCOUNT_ID="${{ secrets.CF_ACCOUNT_ID }}"
+          PROJECT_NAME="${{ secrets.CF_PROJECT_NAME }}"
+          API_TOKEN="${{ secrets.CF_API_TOKEN }}"
+          MAX_RETRIES=20
+          RETRY_INTERVAL=10
+
+          for ((i=1;i<=MAX_RETRIES;i++)); do
+            echo "Polling Cloudflare Pages API (attempt $i)..."
+            response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/pages/projects/${PROJECT_NAME}/deployments" \
+              -H "Authorization: Bearer ${API_TOKEN}" \
+              -H "Content-Type: application/json")
+
+            # 取出最新的 deployment
+            latest=$(echo "$response" | jq '.result[0]')
+            status=$(echo "$latest" | jq -r '.latest_stage.status')
+            url=$(echo "$latest" | jq -r '.url')
+
+            echo "Latest deployment status: $status"
+
+            if [[ "$status" == "success" ]]; then
+              echo "Deployment successful"
+              echo "deploy_status=success" >> $GITHUB_OUTPUT
+              echo "deploy_url=$url" >> $GITHUB_OUTPUT
+              break
+            elif [[ "$status" == "failed" ]]; then
+              echo "Deployment failed"
+              echo "deploy_status=failed" >> $GITHUB_OUTPUT
+              break
+            else
+              sleep $RETRY_INTERVAL
+            fi
+          done
 
       - name: Send Telegram Notification
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            Cloudflare Pages Deployment Status
-            Project: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-            Environment: ${{ steps.cf-pages.outputs.environment }}
-            Deployment ID: ${{ steps.cf-pages.outputs.id }}
-            URL: ${{ steps.cf-pages.outputs.url }}
-            Alias URL: ${{ steps.cf-pages.outputs.alias }}
-            Status: ${{ steps.cf-pages.outputs.status }}
+        if: always()
+        run: |
+          STATUS="${{ steps.check_status.outputs.deploy_status }}"
+          URL="${{ steps.check_status.outputs.deploy_url }}"
+          TOKEN="${{ secrets.CF_API_TOKEN }}"
+          CHAT_ID="${{ secrets.TELEGRAM_TO }}"
+
+          if [[ "$STATUS" == "success" ]]; then
+            TEXT="🚀 Cloudflare Pages 部署成功 🎉\n🔗 網址：$URL"
+          else
+            TEXT="❌ Cloudflare Pages 部署失敗！請查看 GitHub Actions 或 Pages Logs"
+          fi
+
+          curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+            -d chat_id="${CHAT_ID}" \
+            -d text="${TEXT}"
