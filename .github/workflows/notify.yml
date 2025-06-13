@@ -1,0 +1,52 @@
+name: Notify Cloudflare Pages Deployment
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Wait for Cloudflare Pages Deployment
+        id: cf-pages
+        uses: arddluma/cloudflare-pages-slack-notification@v4
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          project: ${{ secrets.CF_PROJECT_NAME }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send Telegram Notification on Success
+        if: steps.cf-pages.outputs.status == 'success'
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ✅ Cloudflare Pages Deployment Succeeded!
+            Project: ${{ secrets.CF_PROJECT_NAME }}
+            Commit: ${{ github.sha }}
+            By: ${{ github.actor }}
+            Details: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
+      - name: Send Telegram Notification on Failure
+        if: steps.cf-pages.outputs.status != 'success'
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ❌ Cloudflare Pages Deployment Failed!
+            Project: ${{ secrets.CF_PROJECT_NAME }}
+            Commit: ${{ github.sha }}
+            By: ${{ github.actor }}
+            Check logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
