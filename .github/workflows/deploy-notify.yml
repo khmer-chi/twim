@@ -57,7 +57,7 @@ jobs:
         run: |
           STATUS="${{ steps.check_status.outputs.deploy_status }}"
           URL="${{ steps.check_status.outputs.deploy_url }}"
-          TOKEN="${{ secrets.CF_API_TOKEN }}"
+          TOKEN="${{ secrets.TELEGRAM_TOKEN }}"
           CHAT_ID="${{ secrets.TELEGRAM_TO }}"
 
           if [[ "$STATUS" == "success" ]]; then
