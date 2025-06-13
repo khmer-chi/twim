@@ -34,9 +34,9 @@ createtime: 202506131946
 <type>(<scope>): <description>
 ```
 
-1. <type> feat fix 之類的
-2. <scope> 可選表示範圍 如:api、ui
-3. <description> 簡短描述
+1. &lt;type&gt; feat fix 之類的
+2. &lt;scope&gt; 可選表示範圍 如:api、ui
+3. &lt;description&gt; 簡短描述
 
 ## 參考資料
 
