@@ -3,13 +3,6 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - '.github/**'
-  pull_request:
-    branches:
-      - master
-    types: [closed]
-  workflow_dispatch:
 
 jobs:
   build:
