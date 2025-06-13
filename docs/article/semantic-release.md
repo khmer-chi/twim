@@ -1,5 +1,6 @@
 ---
 title: 語意判斷git commit 增加版本號
+createtime: 202506131946
 ---
 
 最近在嘗試將專案用 vite 打包成 library
