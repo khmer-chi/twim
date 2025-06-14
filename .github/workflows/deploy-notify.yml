@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Pages and Notify via Telegram
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
