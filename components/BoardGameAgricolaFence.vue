@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { renderBoard } from "board-game-agricola-fence";
+import { renderBoard } from "my-board-game-agricola-fence";
 const { fenceArray = [] } = defineProps<{ fenceArray?: string[] }>();
 const boardGameAgricolaFence = ref<HTMLElement>();
 const fenceSet = ref<Set<string>>(new Set());

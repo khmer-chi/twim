@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@unocss/transformer-directives": "^66.2.3",
-    "board-game-agricola-fence": "^1.4.3",
     "markdown-it-mathjax3": "^4.3.2",
+    "my-board-game-agricola-fence": "npm:board-game-agricola-fence@1.4.3",
     "vue": "^3.5.16"
   }
 }
