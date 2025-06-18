@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
 import llmstxt from 'vitepress-plugin-llms'
 import { generateSidebar } from '../utils/generateSidebar'
+import { fileURLToPath, URL } from 'node:url'
+
+import UnoCss from 'unocss/vite'
 const sidebar = await generateSidebar()
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -41,7 +44,15 @@ export default defineConfig({
     hostname: 'https://taiwan.im'
   },
   vite: {
-    plugins: [llmstxt()]
+    plugins: [
+      llmstxt(),
+      UnoCss(),
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('../', import.meta.url)),
+      },
+    },
   },
   // async transformHead(context) {
   //   console.log(context)

@@ -25,5 +25,5 @@ hero:
 ## 目標
 
 ```js
-console.log('至少一週兩更');
+console.log('至少一週一更');
 ```
