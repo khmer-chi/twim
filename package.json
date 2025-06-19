@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vitepress dev --port 7777",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview --port 7778"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
