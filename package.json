@@ -11,9 +11,10 @@
     "@vitejs/plugin-vue": "^5.2.4",
     "glob": "^11.0.2",
     "gray-matter": "^4.0.3",
-    "unocss": "^66.2.3",
-    "vitepress": "2.0.0-alpha.5",
-    "vitepress-plugin-llms": "^1.3.4"
+    "sass-embedded": "^1.89.2",
+    "unocss": "^66.3.2",
+    "vitepress": "1.6.3",
+    "vitepress-plugin-llms": "^1.6.0"
   },
   "dependencies": {
     "markdown-it-mathjax3": "^4.3.2",

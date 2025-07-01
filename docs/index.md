@@ -27,3 +27,7 @@ hero:
 ```js
 console.log('至少一週一更');
 ```
+
+## 最新文章
+
+<PostList />

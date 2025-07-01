@@ -1,16 +1,20 @@
 import { defineConfig } from 'vitepress'
 import llmstxt from 'vitepress-plugin-llms'
 import { generateSidebar } from '../utils/generateSidebar'
+import { generatePostList } from '../utils/generatePostList'
 import { fileURLToPath, URL } from 'node:url'
 
 import UnoCss from 'unocss/vite'
 const sidebar = await generateSidebar()
+const postList = await generatePostList()
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-TW',
   title: "台灣即時通",
   description: "TWIM",
   themeConfig: {
+    ...postList,
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
@@ -45,7 +49,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      llmstxt(),
+      llmstxt() as any,
       UnoCss(),
     ],
     resolve: {
