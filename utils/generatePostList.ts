@@ -6,8 +6,16 @@ export const generatePostList = async () => {
   const result = []
   for (let i = 0; i < pathList.length; i++) {
     const path = pathList[i]
-    const { data: { title, createtime }, content } = matter((await readFile(path)).toString())
-    result.push({ title, createtime, content, path })
+    const { data: { title, createtime, description }, content } = matter((await readFile(path)).toString())
+    result.push({
+      title,
+      createtime: createtime.replace(
+        /(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/,
+        "$1年$2月$3日$4點$5分"
+      ),
+      content: (description || content.trim()).substring(0, 50) + "...",
+      path: path.replace(/docs\/([\d\D]+)\.md/, '$1.html'),
+    })
   }
 
 
