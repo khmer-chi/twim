@@ -9,6 +9,7 @@ export const generatePostList = async () => {
     const { data: { title, createtime, description }, content } = matter((await readFile(path)).toString())
     result.push({
       title,
+      sort: createtime,
       createtime: createtime.toString().replace(
         /(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/,
         "$1年$2月$3日$4點$5分"
@@ -20,7 +21,7 @@ export const generatePostList = async () => {
 
 
   const postList = result.toSorted((b, a) => {
-    return a.createtime - b.createtime
+    return a.sort - b.sort
   })
   return { postList }
 }
