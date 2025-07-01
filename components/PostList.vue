@@ -10,7 +10,7 @@ const { theme } = useData();
         {{ item.createtime }}
       </div>
       <div class="text-sm">
-        {{ item.description }}
+        {{ item.content }}
       </div>
     </a>
   </div>
